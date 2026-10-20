@@ -21,9 +21,16 @@ public class Member {
         return jenisPaket;
     }
     
+
 public void setNama(String nama) {
+    if (nama == null || nama.trim().isEmpty()) {
+        System.out.println("Nama tidak boleh kosong.");
+        return;
+    }
+
     this.nama = nama;
 }
+
 
 public void setNoTelepon(String noTelepon) {
     this.noTelepon = noTelepon;
