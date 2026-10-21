@@ -31,10 +31,15 @@ public void setNama(String nama) {
     this.nama = nama;
 }
 
-
 public void setNoTelepon(String noTelepon) {
+    if (noTelepon == null || !noTelepon.matches("0[0-9]{9,}")) {
+        System.out.println("Nomor telepon harus diawali 0 dan minimal 10 digit.");
+        return;
+    }
+
     this.noTelepon = noTelepon;
 }
+
 
 public void setTanggalDaftar(String tanggalDaftar) {
     this.tanggalDaftar = tanggalDaftar;
