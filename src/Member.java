@@ -40,8 +40,13 @@ public void setNoTelepon(String noTelepon) {
     this.noTelepon = noTelepon;
 }
 
-
 public void setTanggalDaftar(String tanggalDaftar) {
+    if (tanggalDaftar == null ||
+        !tanggalDaftar.matches("\\d{2}-\\d{2}-\\d{4}")) {
+        System.out.println("Format tanggal harus dd-MM-yyyy.");
+        return;
+    }
+
     this.tanggalDaftar = tanggalDaftar;
 }
 
