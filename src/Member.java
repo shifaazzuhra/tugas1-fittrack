@@ -50,7 +50,17 @@ public void setTanggalDaftar(String tanggalDaftar) {
     this.tanggalDaftar = tanggalDaftar;
 }
 
+
 public void setJenisPaket(String jenisPaket) {
+    if (jenisPaket == null ||
+        (!jenisPaket.equals("Basic") &&
+         !jenisPaket.equals("Premium") &&
+         !jenisPaket.equals("VIP"))) {
+
+        System.out.println("Jenis paket harus Basic, Premium, atau VIP.");
+        return;
+    }
+
     this.jenisPaket = jenisPaket;
 }
 
