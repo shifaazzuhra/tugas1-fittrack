@@ -75,4 +75,11 @@ public void setJenisPaket(String jenisPaket) {
     this.jenisPaket = jenisPaket;
 }
 
+@Override
+public String toString() {
+    return "Nama: " + nama +
+           "\nNo. Telepon: " + noTelepon +
+           "\nTanggal Daftar: " + tanggalDaftar +
+           "\nJenis Paket: " + jenisPaket;
+}
 }
