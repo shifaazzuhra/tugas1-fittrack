@@ -16,6 +16,10 @@ public Member(String nama, String noTelepon, String tanggalDaftar) {
     this(nama, noTelepon, tanggalDaftar, "Basic");
 }
 
+public Member() {
+    this("Belum diisi", "0000000000", "01-01-2026", "Basic");
+}
+
     public String getNama() {
         return nama;
     }
