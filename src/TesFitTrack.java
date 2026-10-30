@@ -29,5 +29,14 @@ public class TesFitTrack {
             System.out.println("\nAnggota ke-" + (i + 1));
             System.out.println(daftarMember[i]);
         }
+        System.out.println("\nPengujian Validasi");
+
+member1.setNama("");
+member1.setNoTelepon("12345");
+member1.setJenisPaket("Gold");
+
+System.out.println("\nData anggota setelah pengujian:");
+System.out.println(member1);
     }
+    
 }
