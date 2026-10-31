@@ -37,6 +37,22 @@ member1.setJenisPaket("Gold");
 
 System.out.println("\nData anggota setelah pengujian:");
 System.out.println(member1);
+
+System.out.println("\nPengujian Constructor");
+
+Member member4 = new Member("Rina", "081234567899", "31-10-2026");
+System.out.println("\nConstructor 3 parameter:");
+System.out.println(member4);
+
+Member member5 = new Member();
+System.out.println("\nConstructor tanpa parameter:");
+System.out.println(member5);
+
+System.out.println("\nPengujian Tanggal Tidak Valid");
+member4.setTanggalDaftar("31/10/2026");
+
+System.out.println("Tanggal setelah pengujian: " + member4.getTanggalDaftar());
+
     }
     
 }
