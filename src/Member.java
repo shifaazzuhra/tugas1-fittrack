@@ -40,22 +40,47 @@ public class Member {
         this("Belum diisi", "0000000000", "01-01-2026", "Basic");
     }
 
+    /**
+     * Mengambil nama anggota.
+     *
+     * @return nama anggota
+     */
     public String getNama() {
         return nama;
     }
 
+    /**
+     * Mengambil nomor telepon anggota.
+     *
+     * @return nomor telepon anggota
+     */
     public String getNoTelepon() {
         return noTelepon;
     }
 
+    /**
+     * Mengambil tanggal pendaftaran anggota.
+     *
+     * @return tanggal pendaftaran anggota
+     */
     public String getTanggalDaftar() {
         return tanggalDaftar;
     }
 
+    /**
+     * Mengambil jenis paket anggota.
+     *
+     * @return jenis paket anggota
+     */
     public String getJenisPaket() {
         return jenisPaket;
     }
 
+    /**
+     * Mengubah nama anggota jika tidak kosong.
+     *
+     * @param nama nama baru anggota
+     */
     public void setNama(String nama) {
         if (nama == null || nama.trim().isEmpty()) {
             System.out.println("Nama tidak boleh kosong.");
@@ -65,6 +90,11 @@ public class Member {
         this.nama = nama;
     }
 
+    /**
+     * Mengubah nomor telepon jika diawali 0 dan minimal 10 digit.
+     *
+     * @param noTelepon nomor telepon baru anggota
+     */
     public void setNoTelepon(String noTelepon) {
         if (noTelepon == null || !noTelepon.matches("0[0-9]{9,}")) {
             System.out.println("Nomor telepon harus diawali 0 dan minimal 10 digit.");
@@ -74,6 +104,11 @@ public class Member {
         this.noTelepon = noTelepon;
     }
 
+    /**
+     * Mengubah tanggal daftar jika formatnya dd-MM-yyyy.
+     *
+     * @param tanggalDaftar tanggal pendaftaran baru
+     */
     public void setTanggalDaftar(String tanggalDaftar) {
         if (tanggalDaftar == null ||
                 !tanggalDaftar.matches("\\d{2}-\\d{2}-\\d{4}")) {
@@ -84,6 +119,11 @@ public class Member {
         this.tanggalDaftar = tanggalDaftar;
     }
 
+    /**
+     * Mengubah jenis paket jika termasuk Basic, Premium, atau VIP.
+     *
+     * @param jenisPaket jenis paket baru anggota
+     */
     public void setJenisPaket(String jenisPaket) {
         if (jenisPaket == null ||
                 (!jenisPaket.equals("Basic") &&
