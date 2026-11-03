@@ -1,27 +1,29 @@
+/**
+ * Menjalankan pengujian data anggota FitTrack.
+ *
+ * @param args argumen saat program dijalankan
+ */
 public class TesFitTrack {
     public static void main(String[] args) {
         Member member1 = new Member(
-            "Shifa Azzuhra",
-            "081234567890",
-            "28-10-2026",
-            "Premium"
-        );
+                "Shifa Azzuhra",
+                "081234567890",
+                "28-10-2026",
+                "Premium");
 
         Member member2 = new Member(
-            "Nadia",
-            "082345678901",
-            "29-10-2026",
-            "Basic"
-        );
+                "Nadia",
+                "082345678901",
+                "29-10-2026",
+                "Basic");
 
         Member member3 = new Member(
-            "Alya",
-            "085678901234",
-            "29-10-2026",
-            "VIP"
-        );
+                "Alya",
+                "085678901234",
+                "29-10-2026",
+                "VIP");
 
-        Member[] daftarMember = {member1, member2, member3};
+        Member[] daftarMember = { member1, member2, member3 };
 
         System.out.println("Data Anggota FitTrack");
 
@@ -31,28 +33,28 @@ public class TesFitTrack {
         }
         System.out.println("\nPengujian Validasi");
 
-member1.setNama("");
-member1.setNoTelepon("12345");
-member1.setJenisPaket("Gold");
+        member1.setNama("");
+        member1.setNoTelepon("12345");
+        member1.setJenisPaket("Gold");
 
-System.out.println("\nData anggota setelah pengujian:");
-System.out.println(member1);
+        System.out.println("\nData anggota setelah pengujian:");
+        System.out.println(member1);
 
-System.out.println("\nPengujian Constructor");
+        System.out.println("\nPengujian Constructor");
 
-Member member4 = new Member("Rina", "081234567899", "31-10-2026");
-System.out.println("\nConstructor 3 parameter:");
-System.out.println(member4);
+        Member member4 = new Member("Rina", "081234567899", "31-10-2026");
+        System.out.println("\nConstructor 3 parameter:");
+        System.out.println(member4);
 
-Member member5 = new Member();
-System.out.println("\nConstructor tanpa parameter:");
-System.out.println(member5);
+        Member member5 = new Member();
+        System.out.println("\nConstructor tanpa parameter:");
+        System.out.println(member5);
 
-System.out.println("\nPengujian Tanggal Tidak Valid");
-member4.setTanggalDaftar("31/10/2026");
+        System.out.println("\nPengujian Tanggal Tidak Valid");
+        member4.setTanggalDaftar("31/10/2026");
 
-System.out.println("Tanggal setelah pengujian: " + member4.getTanggalDaftar());
+        System.out.println("Tanggal setelah pengujian: " + member4.getTanggalDaftar());
 
     }
-    
+
 }

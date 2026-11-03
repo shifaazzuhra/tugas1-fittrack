@@ -137,6 +137,12 @@ public class Member {
         this.jenisPaket = jenisPaket;
     }
 
+    /**
+     * Menampilkan informasi anggota dalam bentuk teks.
+     *
+     * @return data anggota yang berisi nama, nomor telepon,
+     *         tanggal daftar, dan jenis paket
+     */
     @Override
     public String toString() {
         return "Nama: " + nama +
