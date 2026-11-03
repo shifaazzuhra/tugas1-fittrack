@@ -2,6 +2,12 @@
  * Class Member digunakan untuk menyimpan data anggota gym FitTrack.
  */
 public class Member {
+    private static final int MIN_PANJANG_TELEPON = 10;
+    private static final String PAKET_DEFAULT = "Basic";
+    private static final String NAMA_DEFAULT = "Belum diisi";
+    private static final String TELEPON_DEFAULT = "0000000000";
+    private static final String TANGGAL_DEFAULT = "01-01-2026";
+
     private String nama;
     private String noTelepon;
     private String tanggalDaftar;
@@ -16,6 +22,11 @@ public class Member {
      * @param jenisPaket    jenis paket keanggotaan
      */
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
+        this.nama = NAMA_DEFAULT;
+        this.noTelepon = TELEPON_DEFAULT;
+        this.tanggalDaftar = TANGGAL_DEFAULT;
+        this.jenisPaket = PAKET_DEFAULT;
+
         setNama(nama);
         setNoTelepon(noTelepon);
         setTanggalDaftar(tanggalDaftar);
@@ -30,14 +41,14 @@ public class Member {
      * @param tanggalDaftar tanggal pendaftaran anggota
      */
     public Member(String nama, String noTelepon, String tanggalDaftar) {
-        this(nama, noTelepon, tanggalDaftar, "Basic");
+        this(nama, noTelepon, tanggalDaftar, PAKET_DEFAULT);
     }
 
     /**
      * Membuat anggota dengan data default.
      */
     public Member() {
-        this("Belum diisi", "0000000000", "01-01-2026", "Basic");
+        this(NAMA_DEFAULT, TELEPON_DEFAULT, TANGGAL_DEFAULT, PAKET_DEFAULT);
     }
 
     /**
@@ -96,7 +107,9 @@ public class Member {
      * @param noTelepon nomor telepon baru anggota
      */
     public void setNoTelepon(String noTelepon) {
-        if (noTelepon == null || !noTelepon.matches("0[0-9]{9,}")) {
+        if (noTelepon == null ||
+                !noTelepon.matches("0[0-9]+") ||
+                noTelepon.length() < MIN_PANJANG_TELEPON) {
             System.out.println("Nomor telepon harus diawali 0 dan minimal 10 digit.");
             return;
         }

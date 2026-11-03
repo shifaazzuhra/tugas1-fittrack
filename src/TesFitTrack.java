@@ -1,9 +1,12 @@
 /**
- * Menjalankan pengujian data anggota FitTrack.
- *
- * @param args argumen saat program dijalankan
+ * Class untuk menguji fitur-fitur pada Member.
  */
 public class TesFitTrack {
+    /**
+     * Menjalankan pengujian data anggota FitTrack.
+     *
+     * @param args argumen saat program dijalankan
+     */
     public static void main(String[] args) {
         Member member1 = new Member(
                 "Shifa Azzuhra",
@@ -23,7 +26,12 @@ public class TesFitTrack {
                 "29-10-2026",
                 "VIP");
 
-        Member[] daftarMember = { member1, member2, member3 };
+        Member member4 = new Member(
+                "Rina",
+                "081234567899",
+                "31-10-2026");
+
+        Member[] daftarMember = { member1, member2, member3, member4 };
 
         System.out.println("Data Anggota FitTrack");
 
@@ -42,7 +50,6 @@ public class TesFitTrack {
 
         System.out.println("\nPengujian Constructor");
 
-        Member member4 = new Member("Rina", "081234567899", "31-10-2026");
         System.out.println("\nConstructor 3 parameter:");
         System.out.println(member4);
 
@@ -55,6 +62,14 @@ public class TesFitTrack {
 
         System.out.println("Tanggal setelah pengujian: " + member4.getTanggalDaftar());
 
-    }
+        System.out.println("\nPengujian Constructor dengan Data Tidak Valid");
 
+        Member memberTidakValid = new Member(
+                "",
+                "12345",
+                "31/10/2026",
+                "Gold");
+
+        System.out.println(memberTidakValid);
+    }
 }
